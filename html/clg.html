@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/fontsize.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/clg.css"/>
+	</head>
+	<body>
+		<div class="header">
+			<img src="../images/c1.jpg"/>
+		</div>
+		<!--<div class="title">
+			<img src="../images/c2.jpg"/>
+		</div>
+		<div class="banner">
+			<img src="../images/c2t.jpg"/>
+		</div>
+		<div class="content">
+			<a href="javascript:;"><img src="../images/c2_1.jpg" alt="" /></a>
+			<a href="javascript:;"><img src="../images/c2_2.jpg" alt="" /></a>
+			<a href="javascript:;"><img src="../images/c2_3.jpg" alt="" /></a>
+		</div>
+		<div class="content">
+			<a href="javascript:;"><img src="../images/c2_4.jpg" alt="" /></a>
+			<a href="javascript:;"><img src="../images/c2_5.jpg" alt="" /></a>
+			<a href="javascript:;"><img src="../images/c2_6.jpg" alt="" /></a>
+		</div>
+		<div class="title">
+			<img src="../images/c2.jpg"/>
+		</div>
+		<div class="banner">
+			<img src="../images/c2t.jpg"/>
+		</div>
+		<div class="content">
+			<a href="javascript:;"><img src="../images/c2_1.jpg" alt="" /></a>
+			<a href="javascript:;"><img src="../images/c2_2.jpg" alt="" /></a>
+			<a href="javascript:;"><img src="../images/c2_3.jpg" alt="" /></a>
+		</div>
+		<div class="content">
+			<a href="javascript:;"><img src="../images/c2_4.jpg" alt="" /></a>
+			<a href="javascript:;"><img src="../images/c2_5.jpg" alt="" /></a>
+			<a href="javascript:;"><img src="../images/c2_6.jpg" alt="" /></a>
+		</div>-->
+	</body>
+	<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$.ajax({
+			type:"get",
+			url:"../json/clg.json",
+			dateType:"json",
+			success:function(date){
+				for (var i=0;i<date.length;i++) {
+				var divtitle=$("<div class='title'><img src='"+date[i]['title']+"' /></div>");
+				$("body").append(divtitle);
+				var divbanner=$("<div class='banner'><img src='"+date[i]['banner']+"' /></div>");
+				$("body").append(divbanner);
+				var divcontent1=$("<div class='content'></div>");
+				var divcontent2=$("<div class='content'></div>");
+//				date[i]["content1"].length
+				for (var j=0;j<date[i]["content1"].length;j++) {
+						var creata_img=$("<a><img src='"+date[i]["content1"][j]+"' /></a>")
+						divcontent1.append(creata_img);
+					}
+				for (var k=0;k<date[i]["content2"].length;k++) {
+						var creata_img=$("<a><img src='"+date[i]["content2"][k]+"' /></a>")
+						divcontent2.append(creata_img);
+					}
+				$("body").append(divcontent1);
+				$("body").append(divcontent2);
+				}
+			}
+		});
+	</script>
+</html>

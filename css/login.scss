@@ -1,0 +1,61 @@
+@charset "utf-8";
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.title{
+    width: 100%;
+    height: 9vh;
+    background: #dfdfdf;
+    text-align: center;
+    line-height: 9vh;
+    position: relative;
+    font-weight: bolder;
+    .quxiao{
+        display: block;
+        position: absolute;
+        left: 2.8vh;
+        font-size: 1.2rem;
+    }
+    .longin{
+        font-size: 1.4rem;
+    }
+}
+.reg{
+    margin-left: 2%;
+    width: 98%;
+    height: 7vh;
+    line-height: 7vh;
+     border-bottom: 1px solid silver;
+     font-size: 1.2rem;
+     input{
+        margin-left: 2%;
+        border: none;
+        outline: none;
+    }
+}
+.tijiao{
+    width: 95vw;
+    height: 5.5vh;
+    background: #dddddd;
+    text-align: center;
+    margin-left: 2.5vw;
+    margin-top: 4vh;
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    outline: none;
+}
+.res{
+    display: block;
+    font-weight: bold;
+    color: #2a8cff;
+    position: absolute;
+    top: 35vh;
+}
+.kuaisuzc{
+    left: 2.5vw;
+}
+.wangjimm{
+ right: 2.5vw;   
+}

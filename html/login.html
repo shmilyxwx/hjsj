@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/fontsize.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+	</head>
+	<body>
+		<div class="title">
+			<span class="quxiao">取消</span>
+			<span class="longin">登录</span>
+		</div>
+		<div class="reg zhanghao">
+			<span>账号</span>
+			<input type="text" name="username" id="username" placeholder="请输入邮箱/手机号" />
+		</div>
+		<div class="reg pwd">
+			<span>密码</span>
+			<input type="text" name="pwd" id="pwd" placeholder="请输入您的密码" />
+			
+		</div>
+		<button class="tijiao">登录</button>
+		<span class="tip"></span>
+		<span class="res kuaisuzc">快速注册</span>
+		<span class="res wangjimm">忘记密码?</span>
+	</body>
+	<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".tijiao").click(function(){
+			var username=$("#username").val();
+			var pwd=$("#pwd").val()
+			var reqmail= /^[_\.0-9a-z-]+@([0-9a-z][0-9a-z-]+\.){1,4}[a-z]{2,3}$/;
+			var reqnum=/^1[34578]\d{9}$/;
+			if(username.length!=0){
+				if(reqmail.test(username)||reqnum.test(username)){
+					$.ajax({
+								type:"get",
+								url:"dl.php",
+								data:{username:username,pwd:pwd},
+								dataType:"json",
+								success:function(datas){
+									
+									 switch(datas*1){
+			                           case 1:
+			                           window.location.href=""//首页地址
+											
+			                           break;
+			                           case 2:
+			                           		$(".tip").html("登录失败");
+											$(".tip").show();
+											setTimeout(yc,2000);
+			                           break;
+			                           case 3:
+			                           		$(".tip").html("用户名不存在");
+											$(".tip").show();
+											setTimeout(yc,2000);
+			                           break;
+			                       }
+								}
+							});
+				}else{
+					alert("用户名不正确");
+				}
+			}else{
+				alert("手机号不能为空");
+			}
+		})
+		$(".kuaisuzc").click(function(){
+			window.location.href="register.html"
+		})
+		
+		$(".wangjimm").click(function(){
+			var username1=$("#username").val();
+			window.location.href="resetting.html?"+username1+""
+		})
+	</script>
+</html>
