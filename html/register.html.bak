@@ -53,44 +53,53 @@
 			var phone = $("#username").val();
 			if(phone.length!=0){
 				if(req.test(phone)){
-					if(yzm==getyzm){
-						$.ajax({
-											type:"get",
-											url:"zc.php",
-											data:{username:phone,pwd:pwd},
-											dataType:"json",
-											success:function(datas){
-												switch(datas*1){
-						                           case 0:
-							                            $(".tip").html("服务器异常");
-														$(".tip").show();
-														setTimeout(yc,2000);
-						                           break;
-						                           case 1:
-						                          		$(".tip").html("注册成功");
-														$(".tip").show();
-														setTimeout(yc,2000);
-						                           break;
-						                           case 2:
-						                           		$(".tip").html("该用户名已存在");
-														$(".tip").show();
-														setTimeout(yc,2000);
-						                           break;
-						                           default:
-						                           break;
-						                       }
-											}
-										});
-						
-						
-						
-					}else{
-						$(".tip").html("验证码输入错误");
+					
+					if(!yzm){
+						$(".tip").html("验证码不能为空");
 						$(".tip").show();
 						setTimeout(yc,2000);
+					}else{
+						if(yzm!=getyzm){
+							if(!pwd){
+							$(".tip").html("验证码输入不正确");
+							$(".tip").show();
+							setTimeout(yc,2000);
+						}
+						else{
+							$.ajax({
+								type:"get",
+								url:"zc.php",
+								data:{username:phone,pwd:pwd},
+								dataType:"json",
+								success:function(datas){
+									switch(datas*1){
+			                           case 0:
+				                            $(".tip").html("服务器异常");
+											$(".tip").show();
+											setTimeout(yc,2000);
+			                           break;
+			                           case 1:
+			                          		$(".tip").html("注册成功");
+											$(".tip").show();
+											setTimeout(yc,2000);
+			                           break;
+			                           case 2:
+			                           		$(".tip").html("该用户名已存在");
+											$(".tip").show();
+											setTimeout(yc,2000);
+			                           break;
+			                           default:
+			                           break;
+			                       }
+								}
+							});
+						}
+						}else{
+							$(".tip").html("验证码不正确");
+							$(".tip").show();
+							setTimeout(yc,2000);
+						}
 					}
-					
-					
 					
 					
 				}else{
