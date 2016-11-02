@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/fontsize.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/pgzc.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+	</head>
+	<body>
+			<div class="content">
+				<img src="http://img.mockuai.com/images/201607/30/21/20160730213010978.png"/>
+				<img src="http://img.mockuai.com/images/201607/30/21/20160730213417295.png"/>
+				<img src="http://img.mockuai.com/images/201609/27/17/20160927173544991.png"/>
+				<img src="http://img.mockuai.com/images/201608/01/08/20160801085326910.png"/>
+				<img src="http://img.mockuai.com/images/201608/01/08/20160801085651495.png"/>
+			</div>
+			<div class="nav">
+				<ul class="navlist">
+					<li>iPhone</li>
+					<li >iPad</li>
+					<li class="active">Mac</li>
+					<li>Watch</li>
+					<li>Beats</li>
+				</ul>
+			</div>
+			<div class="goodslist">
+				<div class="Mac"></div>
+				<div class="iPhone"></div>
+				<div class="Mac"></div>
+				<div class="iPhone"></div>
+				<div class="Mac"></div>
+			</div>
+	</body>
+	<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".navlist li").click(function(){
+			var index=$(this).index()
+			$(this).addClass("active").siblings().removeClass("active")
+			$(".content img").eq(index).css("z-index","2").siblings().css("z-index","0");
+			$(".goodslist>div").eq(index).css("z-index","2").siblings().css("z-index","0");
+		})
+		
+		$.ajax({
+			type:"get",
+			url:"../json/pgzcMac.json",
+			dateType:"json",
+			success:function(data){
+				for (var i=0;i<data.length;i++) {
+					var divgoods=$("<div class='goods'><a href='javascript:;'><img src='"+data[i]["src"]+"'/></a><p>"+data[i]["name"]+"</p><span id='price'>"+data[i]["price"]+"</span><del>"+data[i]["del"]+"</del></div>")
+					$(".Mac").append(divgoods);
+				}
+				var src="http://img.mockuai.com/images/201607/30/21/20160730212241605.png"
+				var divtitle=$("<div class='title'><img src='"+src+"'/></div>");
+				$(".Mac").append(divtitle);
+			}
+		});
+		$.ajax({
+			type:"get",
+			url:"../json/pgzcMac_2.json",
+			dateType:"json",
+			success:function(datas){
+								for (var i=0;i<datas.length;i++) {				
+					var divgoodss=$("<div class='goods'><a href='javascript:;'><img src='"+datas[i]["src"]+"'/></a><p>"+datas[i]["name"]+"</p><span id='price'>"+datas[i]["price"]+"</span><del>"+datas[i]["del"]+"</del></div>")
+					$(".Mac").append(divgoodss);
+				}
+			}
+		});
+		$.ajax({
+			type:"get",
+			url:"../json/pgzciPhone.json",
+			dateType:"json",
+			success:function(data){ 
+								for (var i=0;i<data.length;i++) {				
+					var divgoods=$("<div class='goods'><a href='javascript:;'><img src='"+data[i]["src"]+"'/></a><p>"+data[i]["name"]+"</p><span id='price'>"+data[i]["price"]+"</span><del>"+data[i]["del"]+"</del></div>")
+					$(".iPhone").append(divgoods);
+				}
+			}
+		});
+	</script>
+</html>

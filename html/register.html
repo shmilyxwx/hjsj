@@ -60,6 +60,7 @@
 											data:{username:phone,pwd:pwd},
 											dataType:"json",
 											success:function(datas){
+												datas=datas.charAt(datas.length-1);
 												switch(datas*1){
 						                           case 0:
 							                            $(".tip").html("服务器异常");
@@ -69,7 +70,7 @@
 						                           case 1:
 						                          		$(".tip").html("注册成功");
 														$(".tip").show();
-														setTimeout(yc,2000);
+														window.location.href="https://www.baidu.com"
 						                           break;
 						                           case 2:
 						                           		$(".tip").html("该用户名已存在");

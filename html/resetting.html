@@ -31,6 +31,9 @@
 	</body>
 	<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
+	function yc(){
+						$(".tip").hide()
+				}
 		var username=window.location.href;
 		username=username.split("?")[1];
 		$(".getyzm").click(function(){
@@ -49,15 +52,19 @@
 					dataType:"json",
 					success:function(datas){
 					if((datas*1)==2){
-						alert("修改成功");
+						
 						window.location.href="login.html"
 					}else{
-						alert("修改失败");
+						$(".tip").html("修改失败");
+						$(".tip").show();
+						setTimeout(yc,2000);
 					}
 					}
 				});
 			}else{
-				alert("验证码输入错误")
+				$(".tip").html("验证码失败");
+				$(".tip").show();
+				setTimeout(yc,2000);
 			}
 		})
 	</script>

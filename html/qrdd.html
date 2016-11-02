@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/fontsize.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/qrdd.css"/>
+	</head>
+	<body>
+		<div class="title">
+			<span>确认订单</span>
+			<img class="titlelogo" src="../images/back.png"/>
+		</div>
+		<div class="selectfs">
+			<ul class="selectlist">
+				<li>
+					<input type="radio" name="xuanze" id="xuanze" checked="checked"  />
+					快递配送
+				</li>
+				<li>
+					<input type="radio" name="xuanze" id="xuanze"  />
+					两小时到达
+				</li>
+				<li>
+					<input type="radio" name="xuanze" id="xuanze"  />
+					到点自提
+				</li>
+			</ul>
+		</div>
+		<div class="xingzengdiz">
+			
+			<!--<span id="name">
+				收货人:<a></a>
+				
+			</span>
+			<span id="dianhua">
+				13026138568
+			</span>
+			<span id="dizhi">
+				收货地址:
+				<a>湖北省武汉市江汉区</a>
+			</span>-->
+		</div>
+		<div class="shopdecs">
+			<img class="imgdecs" src="http://img.mockuai.com/images/20161006/14/20161006144126905.jpg"/>
+			<div class="decstext">
+				<p>
+					【前10名送乐心手环】华为P9 4G+64GB 全网通 双卡双待 手机
+				</p>
+				<span>
+					托帕蓝-全网通-标配
+				</span>
+				<a href="" class="price">
+					￥3688.00
+				</a>
+			</div>
+		</div>
+		<div class="middle">
+			<ul>
+				<li><span id="yunfei">运费</span><span id="jiage">￥0.00</span></li>
+				<li><span id="youhuijuan">优惠卷</span><img src="../images/right.jpg" /></li>
+				<li><input type="text" name="liuyan" id="liuyan" placeholder="备注留言" /></li>
+			</ul>
+		</div>
+		<div class="huabei">
+			<p>使用话贝抵现话贝余额：<span>0</span></p>
+		</div>
+		<div class="zongjine">
+			<p>商品金额:<span>3688</span></p>
+		</div>
+		<div class="xuanzezhifs">
+			<p>选择支付方式</p>
+			<p>
+				<img src="../images/zfb.jpg" alt="" />
+				<span >
+					支付宝支付<br />
+					推荐使用支付宝
+				</span>
+				<input type="radio" name="zfbxz" id="zfbxz" checked />
+			</p>
+		</div>
+		<div class="bottom">
+			<p>
+				实付款(含运费): ¥
+				<span id="jine">
+					3688.00
+				</span>
+			</p>
+			<div id="lijizhifu">
+				立即支付
+			</div>
+		</div>
+	</body>
+	<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".selectlist>li").on("touchstart",function(){
+			$(this).find("input").prop("checked","checked")
+		})
+		var flage=false;
+		var str = document.cookie;
+		var list = str.split(";");
+		for (var i=0;i<list.length;i++) {
+			var temp=list[i];
+			if(temp.indexOf("shr")!=-1){
+				flage=true;
+				break;
+			}
+		}
+		if(!flage){
+			$(".xingzengdiz").on("touchstart",function(){
+			window.location.href="xzdz.html";
+			$(this).html("")
+	
+		})
+		}
+		if(flage){
+			$(".xingzengdiz").on("touchstart",function(){
+				window.location.href="xuanzedizhi.html"
+			})
+		}
+			
+			if(flage){
+			var list = str.split(";");
+			var span1=$("<span id='name'>收货人：<a>"+decodeURI(list[0].split("=")[1])+"</a></span>");
+			var span2=$("<span id='dianhua'>"+decodeURI(list[1].split("=")[1])+"</span>");
+			var span3=$("<span id='dizhi'>收货地址:<a>"+decodeURI(list[2].split("=")[1]+list[3].split("=")[1])+"</a></span>");
+			var imgs=$("<img id='two' src='../images/right.jpg' />")
+			$(".xingzengdiz").append(span1);
+			$(".xingzengdiz").append(span2);
+			$(".xingzengdiz").append(span3);
+			$(".xingzengdiz").append(imgs);
+			}else{
+			var imgone=$("<img class='one' src='../images/jia.jpg' />");
+			var spantext=$("<span id='xingjianshouhuo'>新建收货地址</span>");
+			var imgtwo=$("<img class='two' src='../images/right.jpg' />");
+			$(".xingzengdiz").append(imgone);
+			$(".xingzengdiz").append(spantext);
+			$(".xingzengdiz").append(imgtwo);
+			}
+			
+			var herf=window.location.href;
+			var flage2=false;
+			if(herf.indexOf("?")!=-1){
+				flage2=true;
+			}
+			if(flage2){
+				var herflist=herf.split("?");
+				var list=[];
+				for (var i=1;i<4;i++) {
+					list.push( decodeURI(herflist[i].split("=")[1]))
+				}
+				console.log(list)
+				$(".xingzengdiz>#name").find("a").html(list[0]);
+				$(".xingzengdiz>#dianhua").html(list[1]);
+				$(".xingzengdiz>#dizhi").find("a").html(list[2]);
+			}
+	</script>
+</html>

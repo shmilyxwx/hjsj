@@ -14,7 +14,7 @@
 	</head>
 	<body>
 		<div class="header">
-			<img src="../images/c1.jpg"/>
+			<img src="http://img.mockuai.com/images/201604/20/09/20160420095751188.jpg"/>
 		</div>
 		<!--<div class="title">
 			<img src="../images/c2.jpg"/>
@@ -49,7 +49,9 @@
 			<a href="javascript:;"><img src="../images/c2_6.jpg" alt="" /></a>
 		</div>-->
 	</body>
+	<script src="../js/getsetcook.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/lazyload.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		$.ajax({
 			type:"get",
@@ -57,25 +59,29 @@
 			dateType:"json",
 			success:function(date){
 				for (var i=0;i<date.length;i++) {
-				var divtitle=$("<div class='title'><img src='"+date[i]['title']+"' /></div>");
+				var divtitle=$("<div class='title'><img class='scrollLoading' data-url="+date[i]['title']+"  src='http://image.zhangxinxu.com/image/study/head/s180/1.jpeg' /></div>");
 				$("body").append(divtitle);
-				var divbanner=$("<div class='banner'><img src='"+date[i]['banner']+"' /></div>");
+				var divbanner=$("<div class='banner'><img class='scrollLoading' data-url="+date[i]['banner']+"  src='http://image.zhangxinxu.com/image/study/head/s180/1.jpeg' /></div>");
 				$("body").append(divbanner);
 				var divcontent1=$("<div class='content'></div>");
 				var divcontent2=$("<div class='content'></div>");
 //				date[i]["content1"].length
 				for (var j=0;j<date[i]["content1"].length;j++) {
-						var creata_img=$("<a><img src='"+date[i]["content1"][j]+"' /></a>")
+						var creata_img=$("<a><img class='scrollLoading' data-url="+date[i]["content1"][j]+" src='http://image.zhangxinxu.com/image/study/head/s180/1.jpeg' /></a>")
 						divcontent1.append(creata_img);
 					}
 				for (var k=0;k<date[i]["content2"].length;k++) {
-						var creata_img=$("<a><img src='"+date[i]["content2"][k]+"' /></a>")
+						var creata_img=$("<a><img class='scrollLoading' data-url="+date[i]["content2"][k]+" src='http://image.zhangxinxu.com/image/study/head/s180/1.jpeg' /></a>")
 						divcontent2.append(creata_img);
 					}
 				$("body").append(divcontent1);
 				$("body").append(divcontent2);
+				$(".scrollLoading").scrollLoading();
 				}
 			}
+			
 		});
+//	$(".scrollLoading").scrollLoading();
+		
 	</script>
 </html>

@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/fontsize.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/iconfontdl.css"/>
 	</head>
 	<body>
 		<div class="title">
@@ -23,13 +24,21 @@
 		</div>
 		<div class="reg pwd">
 			<span>密码</span>
-			<input type="text" name="pwd" id="pwd" placeholder="请输入您的密码" />
-			
+			<input type="password" name="pwd" id="pwd" placeholder="请输入您的密码" />
+			 <i class="iconfont icon-iconfontfaxianon2"></i>
 		</div>
 		<button class="tijiao">登录</button>
 		<span class="tip"></span>
 		<span class="res kuaisuzc">快速注册</span>
 		<span class="res wangjimm">忘记密码?</span>
+		<div class="linebox">
+			<div class="lineright"></div>
+			<div class="text">第三方账号登录</div>
+			<div class="lineleft"></div>
+		</div>
+		<div class="weixin">
+			<i class="iconfont icon-weixin"></i>
+		</div>
 	</body>
 	<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
@@ -79,6 +88,22 @@
 		$(".wangjimm").click(function(){
 			var username1=$("#username").val();
 			window.location.href="resetting.html?"+username1+""
+		})
+		
+		
+		/********************************隐藏显示按钮**************************************************/
+		var flage=true;
+		$(".iconfont").click(function(){
+
+			if(flage==true){
+				$(this).removeClass("icon-iconfontfaxianon2").addClass("icon-xianshimima");
+				$("#pwd").attr("type","text")
+				flage=false;
+			}else{
+				$(this).removeClass("icon-xianshimima").addClass("icon-iconfontfaxianon2");
+				$("#pwd").attr("type","password")
+				flage=true;
+			}
 		})
 	</script>
 </html>

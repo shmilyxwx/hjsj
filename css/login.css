@@ -55,4 +55,38 @@ html, body {
 .wangjimm {
   right: 2.5vw; }
 
+.pwd .iconfont {
+  margin-left: 20%; }
+
+.linebox {
+  display: flex;
+  width: 100%;
+  margin-top: 20%;
+  flex: 1;
+  justify-content: center;
+  align-items: center; }
+  .linebox div {
+    flex: 2; }
+  .linebox .lineright {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid silver; }
+  .linebox .lineleft {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid silver; }
+  .linebox .text {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+.weixin {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .weixin .iconfont {
+    font-size: 3rem;
+    color: greenyellow; }
+
 /*# sourceMappingURL=login.css.map */

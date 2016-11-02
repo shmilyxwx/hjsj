@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/fontsize.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/xuanzedizhi.css"/>
+	</head>
+	<body>
+		<div class="title">
+			<span>选择地址</span>
+			<img class="titlelogo" src="../images/back.png"/>
+		</div>
+		<div class="xinzendizhi">
+			<img id="one" src="../images/jia.jpg"/>
+			<span id="xjdztext">
+				新建收货地址
+			</span>
+			<img id="two" src="../images/right.jpg"/>
+		</div>
+		<!--<div class="dizhixuanxiang">
+			<span class="name">
+				熊文轩
+			</span>
+			<span class="phone">
+				13026138568
+			</span>
+			<p class="xiangxidizhi">
+				湖北省武汉市江汉区
+			</p>
+		</div>-->
+	</body>
+	<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/getsetcook.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var str = document.cookie;
+		console.log(str)
+		var list = str.split(";");
+		var idList = [];
+		for (var i = 0; i < list.length; i++) {
+        var temp = list[i];
+        if (temp.indexOf("shr") != -1) {
+            idList.push(temp.split("=")[1]);
+        }
+   }
+		for (var i = 0; i < idList.length; i++){
+			var id = idList[i];
+			var Name= decodeURI( getCookie("shr" + id));
+	        var phone=decodeURI( getCookie("phonenum" + id));
+	        var dz= decodeURI( getCookie("add" + id));
+	        var xxdz=decodeURI( getCookie("xxdztext" + id));
+	        
+	        
+//	        <div class="dizhixuanxiang">
+//			<span class="name">
+//				熊文轩
+//			</span>
+//			<span class="phone">
+//				13026138568
+//			</span>
+//			<p class="xiangxidizhi">
+//				湖北省武汉市江汉区
+//			</p>
+//			</div>
+
+			var div=$("<div class='dizhixuanxiang'></div>");
+			var span1=$("<span class='name'>"+Name+"</span>");
+			div.append(span1);
+			var span2=$("<span class='phone'>"+phone+"</span>");
+			div.append(span2);
+			var p=$("<p class='xiangxidizhi'>"+dz+""+xxdz+"</p>");
+			div.append(p);
+			$("body").append(div);
+			
+	       
+		}
+		 $(".dizhixuanxiang").on("click",function(){
+		 	shrname=$(this).find(".name").html();
+		 	shrphone=$(this).find(".phone").html();
+		 	shradd=$(this).find(".xiangxidizhi").html();
+		 	
+			window.location.href="qrdd.html?name="+shrname+"?phone="+shrphone+"?add="+shradd+""
+		})
+		 $(".xinzendizhi").on("touchstart",function(){
+		 	window.location.href="xzdz.html";
+		 })
+	</script>
+</html>

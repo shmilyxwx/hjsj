@@ -1,0 +1,231 @@
+@charset "utf-8";
+body,html{
+    width: 100%;
+    height: 100%;
+    background: #EEEEEE;
+}
+a{
+    text-decoration: none;
+}
+.title{
+    width: 100%;
+    height: 9vh;
+    background: #F9F9F9;
+    text-align: center;
+    position: relative;
+    line-height: 9vh;
+    .titlelogo{
+        width: 2.7%;
+        height: 30%;
+        display: block;
+        position: absolute;
+        left: 5%;
+        display: inline-block;
+        top: 35%;
+        
+    }
+}
+.selectfs{
+    background: white;
+    width: 100%;
+    height: 10vh;
+    line-height: 10vh;
+    display: flex;
+    text-align: center;
+    flex: 1;
+    ul{
+        display: flex;
+        flex: 1;
+        li{
+            flex: 1;
+        }
+    }
+}
+.xingzengdiz{
+    position: relative;
+    margin-top: 5%;
+    width: 100%;
+//  min-height: 8.9vh;
+    background: white;
+//  line-height: 8.9vh;
+    .one{
+        margin-top: 4%;
+        margin-left: 3%;
+    }
+    #xingjianshouhuo{
+        position: absolute;
+        left: 14%;
+        top: 30%;
+    }
+    .two{
+        float: right;
+        margin-top: 4%;
+        margin-right: 3%;
+    }
+    #name,#dizhi,#dianhua{
+        display: inline-block
+    }
+    #name{
+        width: 40%;
+        float: left;
+    }
+    #dianhua{
+        width: 40%;
+        float: right;
+    }
+    #dizhi{
+        margin-top: 3%;
+    }
+    #two{
+        position: absolute;
+        right: 5%;
+    }
+}
+.shopdecs{
+    position: relative;
+    margin-top: 5%;
+    width: 100%;
+    height: 21.4vh;
+    background: white;
+    .imgdecs{
+        position: absolute;
+        display: inline-block;
+        width: 27.8vw;
+        height: 15vh;
+    }
+    .decstext{
+        position: absolute;
+        width: 61.5vw;
+        height: 9.6vh;
+        right: 3%;
+        p{
+            display: block;
+            width: 100%;
+            height: 6.3vh;
+            font-size: 1rem;
+            overflow: hidden;
+        }
+        span{
+            margin-top: 2%;
+            display: block;
+            width: 100%;
+            height: 3.3vh;
+            bottom: 0;
+            font-size: 1rem;
+            color: silver;
+        }
+    }
+}
+.middle{
+    margin-top: 5%;
+    width: 100%;
+    height: 24vh;
+    background: white;
+    display: flex;
+    flex: 1;
+    ul{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        li{
+            padding-left: 2% 0;
+            margin-left: 2%;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid silver;
+            #jiage{
+                margin-left: 70%;
+            }
+            #youhuijuan{
+                margin-right: 80%;
+            }
+            #liuyan{
+                height: 80%;
+                border-radius: 5px;
+                width: 95%;
+                margin-left: 2.5%;
+                outline: none;
+            }
+            input{
+                border: none;
+                background: silver;
+            }
+        }
+        li:nth-of-type(3){
+            border: none;
+        }
+        
+    }
+}
+.huabei{
+    margin-top: 5%;
+    width: 100%;
+    background: white;
+    height: 7.2vh;
+    line-height: 7.2vh;
+    padding-left: 2%;
+    box-sizing: border-box;
+}
+.zongjine{
+    margin-top: 5%;
+    width: 100%;
+    background: white;
+    height: 7.2vh;
+    line-height: 7.2vh;
+    padding-left: 2%;
+    box-sizing:border-box ;
+}
+.xuanzezhifs{
+    margin-top: 5%;
+    width: 100%;
+    height: 15vh;
+    background: white;
+    p:nth-of-type(1){
+        box-sizing: border-box;
+        display: block;
+        height: 6vh;
+        line-height: 6vh;
+        margin-left: 2%;
+        border-bottom: 1px solid silver;
+    }
+    p:nth-of-type(2){
+        box-sizing: border-box;
+        height: 8.6vh;
+        padding-left: 2%;
+        position: relative;
+        img{
+            display: inline-block;
+        }
+        span{
+            position: absolute;
+            font-size: 1rem;
+        }
+        #zfbxz{
+            position: absolute;
+            right: 4%;
+            top: 40%;
+        }
+    }
+}
+.bottom{
+    margin-top: 5%;
+    width: 100%;
+    height: 10.5vh;
+    background: white;
+    position:relative;
+    box-sizing: border-box;
+    padding-top: 5%;
+    #lijizhifu{
+        display: block;
+        width: 32vw;
+        height: 6vh;
+        line-height: 6vh;
+        position: absolute;
+        right: 5%;
+        top: 20%;
+        background: red;
+        text-align: center;
+        border-radius:5px ;
+    }
+}

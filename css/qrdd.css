@@ -1,0 +1,199 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  background: #EEEEEE; }
+
+a {
+  text-decoration: none; }
+
+.title {
+  width: 100%;
+  height: 9vh;
+  background: #F9F9F9;
+  text-align: center;
+  position: relative;
+  line-height: 9vh; }
+  .title .titlelogo {
+    width: 2.7%;
+    height: 30%;
+    display: block;
+    position: absolute;
+    left: 5%;
+    display: inline-block;
+    top: 35%; }
+
+.selectfs {
+  background: white;
+  width: 100%;
+  height: 10vh;
+  line-height: 10vh;
+  display: flex;
+  text-align: center;
+  flex: 1; }
+  .selectfs ul {
+    display: flex;
+    flex: 1; }
+    .selectfs ul li {
+      flex: 1; }
+
+.xingzengdiz {
+  position: relative;
+  margin-top: 5%;
+  width: 100%;
+  background: white; }
+  .xingzengdiz .one {
+    margin-top: 4%;
+    margin-left: 3%; }
+  .xingzengdiz #xingjianshouhuo {
+    position: absolute;
+    left: 14%;
+    top: 30%; }
+  .xingzengdiz .two {
+    float: right;
+    margin-top: 4%;
+    margin-right: 3%; }
+  .xingzengdiz #name, .xingzengdiz #dizhi, .xingzengdiz #dianhua {
+    display: inline-block; }
+  .xingzengdiz #name {
+    width: 40%;
+    float: left; }
+  .xingzengdiz #dianhua {
+    width: 40%;
+    float: right; }
+  .xingzengdiz #dizhi {
+    margin-top: 3%; }
+  .xingzengdiz #two {
+    position: absolute;
+    right: 5%; }
+
+.shopdecs {
+  position: relative;
+  margin-top: 5%;
+  width: 100%;
+  height: 21.4vh;
+  background: white; }
+  .shopdecs .imgdecs {
+    position: absolute;
+    display: inline-block;
+    width: 27.8vw;
+    height: 15vh; }
+  .shopdecs .decstext {
+    position: absolute;
+    width: 61.5vw;
+    height: 9.6vh;
+    right: 3%; }
+    .shopdecs .decstext p {
+      display: block;
+      width: 100%;
+      height: 6.3vh;
+      font-size: 1rem;
+      overflow: hidden; }
+    .shopdecs .decstext span {
+      margin-top: 2%;
+      display: block;
+      width: 100%;
+      height: 3.3vh;
+      bottom: 0;
+      font-size: 1rem;
+      color: silver; }
+
+.middle {
+  margin-top: 5%;
+  width: 100%;
+  height: 24vh;
+  background: white;
+  display: flex;
+  flex: 1; }
+  .middle ul {
+    display: flex;
+    flex-direction: column;
+    flex: 1; }
+    .middle ul li {
+      padding-left: 2% 0;
+      margin-left: 2%;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid silver; }
+      .middle ul li #jiage {
+        margin-left: 70%; }
+      .middle ul li #youhuijuan {
+        margin-right: 80%; }
+      .middle ul li #liuyan {
+        height: 80%;
+        border-radius: 5px;
+        width: 95%;
+        margin-left: 2.5%;
+        outline: none; }
+      .middle ul li input {
+        border: none;
+        background: silver; }
+    .middle ul li:nth-of-type(3) {
+      border: none; }
+
+.huabei {
+  margin-top: 5%;
+  width: 100%;
+  background: white;
+  height: 7.2vh;
+  line-height: 7.2vh;
+  padding-left: 2%;
+  box-sizing: border-box; }
+
+.zongjine {
+  margin-top: 5%;
+  width: 100%;
+  background: white;
+  height: 7.2vh;
+  line-height: 7.2vh;
+  padding-left: 2%;
+  box-sizing: border-box; }
+
+.xuanzezhifs {
+  margin-top: 5%;
+  width: 100%;
+  height: 15vh;
+  background: white; }
+  .xuanzezhifs p:nth-of-type(1) {
+    box-sizing: border-box;
+    display: block;
+    height: 6vh;
+    line-height: 6vh;
+    margin-left: 2%;
+    border-bottom: 1px solid silver; }
+  .xuanzezhifs p:nth-of-type(2) {
+    box-sizing: border-box;
+    height: 8.6vh;
+    padding-left: 2%;
+    position: relative; }
+    .xuanzezhifs p:nth-of-type(2) img {
+      display: inline-block; }
+    .xuanzezhifs p:nth-of-type(2) span {
+      position: absolute;
+      font-size: 1rem; }
+    .xuanzezhifs p:nth-of-type(2) #zfbxz {
+      position: absolute;
+      right: 4%;
+      top: 40%; }
+
+.bottom {
+  margin-top: 5%;
+  width: 100%;
+  height: 10.5vh;
+  background: white;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 5%; }
+  .bottom #lijizhifu {
+    display: block;
+    width: 32vw;
+    height: 6vh;
+    line-height: 6vh;
+    position: absolute;
+    right: 5%;
+    top: 20%;
+    background: red;
+    text-align: center;
+    border-radius: 5px; }
+
+/*# sourceMappingURL=qrdd.css.map */

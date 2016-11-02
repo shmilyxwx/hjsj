@@ -69,3 +69,15 @@ html,body{
     font-size: 1.4rem;
     outline: none;
 }
+.tip{
+    width: 30%;
+    height: 10%;
+    background: rgba(0,0,0,0.6);
+    margin: 10% auto;
+    border-radius:5px;
+    color: white;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,65 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  background: #EEEEEE; }
+
+.title {
+  width: 100%;
+  height: 9vh;
+  background: #F9F9F9;
+  text-align: center;
+  position: relative;
+  line-height: 9vh; }
+  .title .titlelogo {
+    width: 2.7%;
+    height: 30%;
+    display: block;
+    position: absolute;
+    left: 5%;
+    display: inline-block;
+    top: 35%; }
+
+.wrap {
+  background: white;
+  width: 100%; }
+  .wrap .res {
+    box-sizing: border-box;
+    background: white;
+    padding: 3% 0;
+    margin-left: 5%;
+    border-bottom: 1px solid silver;
+    position: relative; }
+    .wrap .res input {
+      border: none;
+      outline: none;
+      font-size: 1rem; }
+    .wrap .res .dingwei, .wrap .res .kaiguan {
+      position: absolute;
+      right: 5%; }
+  .wrap .morenaddress {
+    border: none; }
+
+.tijiao {
+  width: 95%;
+  height: 5.5vh;
+  text-align: center;
+  line-height: 5.5vh;
+  background: #E85352;
+  margin-left: 2.5vw;
+  margin-top: 5vh;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.5rem; }
+
+.tip {
+  width: 40vw;
+  height: 10vh;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  margin: 5% auto;
+  color: white;
+  display: none;
+  text-align: center;
+  line-height: 10vh; }
+
+/*# sourceMappingURL=xzdz.css.map */

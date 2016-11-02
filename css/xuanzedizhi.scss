@@ -1,0 +1,60 @@
+@charset "utf-8";
+body,html{
+    width: 100%;
+    height: 100%;
+    background: silver;
+}
+.title{
+    width: 100%;
+    height: 9vh;
+    background: #F9F9F9;
+    text-align: center;
+    position: relative;
+    line-height: 9vh;
+    .titlelogo{
+        width: 2.7%;
+        height: 30%;
+        display: block;
+        position: absolute;
+        left: 5%;
+        display: inline-block;
+        top: 35%;
+        
+    }
+}
+.xinzendizhi{
+    margin-top: 5%;
+    width: 100%;
+    height: 9vh;
+    background: white;
+    position: relative;
+    #one,#two,#xjdztext{
+        position: absolute;
+        top: 36%;
+    }
+    #one{
+        left: 3%;
+    }
+    #xjdztext{
+        left: 10%;
+    }
+    #two{
+        right: 3%;
+        
+    }
+}
+.dizhixuanxiang{
+    box-sizing: border-box;
+    background: white;
+    width: 100%;
+    height: 10vh;
+    margin-top: 5%;
+    padding-top: 3%;
+    padding-left: 3%;
+    span:nth-of-type(2){
+        margin-left: 2%;
+    }
+    p{
+        margin-top: 1%;
+    }
+}

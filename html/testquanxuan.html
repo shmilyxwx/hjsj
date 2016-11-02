@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		全选<input type="checkbox" name="quanxuan" id="quanxuan" value="" />
+		单选<input type="checkbox" name="danxuan" class="danxuan" value="" />
+		单选<input type="checkbox" name="danxuan" class="danxuan" value="" />
+	</body>
+	<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+//		$("#quanxuan").on("touchstart",function(){
+//			var s=$(this).prop("checked");
+//			$(".danxuan").prop("checked",s);
+//		})
+		$("#quanxuan").click(function(){
+			var s=$(this).prop("checked");
+			$(".danxuan").prop("checked",s);
+		})
+	</script>
+</html>

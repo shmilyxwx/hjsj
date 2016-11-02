@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/fontsize.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/xzdz.css"/>
+	</head>
+	<body>
+		<div class="title">
+			<span>新增地址</span>
+			<img class="titlelogo" src="../images/back.png"/>
+		</div>
+		<div class="wrap">
+			<div class="res shouhuoren">
+			<span >收货人:</span>
+			<input type="text" id="shr" placeholder="请输入收货人" />
+		</div>
+		<div class="res phone">
+			<span id="phonename">手机号:</span>
+			<input type="text" name="phonenum" id="phonenum" placeholder="请输入手机号" />
+		</div>
+		<div class="res address">
+			<span>所在地区:</span>
+			<input type="text" name="add" id="add" placeholder="请输入所在地区" />
+			<img class="dingwei" src="../images/dingwei.jpg"/>
+		</div>
+		<div class="res xiangxiaddress">
+			<span id="xxdz">详细地址:</span>
+			<input type="text" name="xxdztext" id="xxdztext" placeholder="请输入详细地址" />
+		</div>
+		<div class="res morenaddress">
+			<span id="mrdz">是否设置为默认地址:</span>
+			<img status="1" class="kaiguan" src="../images/guan.jpg"/>
+		</div>
+		</div>
+		<div class="tijiao">
+			保存并使用
+		</div>
+		<div class="tip">
+			
+		</div>
+	</body>
+	<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/getsetcook.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	
+	/***************隐藏函数**********************************/
+					function yc(){
+						$(".tip").hide()
+				}
+	/*************************************************/
+		var flage=true;
+		$(".kaiguan").on("touchstart",function(){
+			if(flage){
+				$(this).attr("src","../images/kai.jpg").attr("status","2");
+				flage=false;
+			}else{
+				$(this).attr("src","../images/guan.jpg").attr("status","1");
+				flage=true;
+			}
+		})
+		$(".tijiao").on("touchstart",function(){
+			var shr=encodeURI($("#shr").val());
+			var phonenum=encodeURI ($("#phonenum").val());
+			var add=encodeURI ($("#add").val());
+			var xxdztext=encodeURI ($("#xxdztext").val());
+			if(shr&&phonenum&&add&&xxdztext){
+				setcookie("shr"+shr, shr,7);
+				setcookie("phonenum"+shr, phonenum,7);
+				setcookie("add"+shr, add,7);
+				setcookie("xxdztext"+shr, xxdztext,7);
+				window.location.href="qrdd.html?name="+shr+"?phone="+phonenum+"?add="+add+xxdztext+"";
+			}
+			else{
+				$(".tip").show().html("请将地址补全");
+				setTimeout(yc,2000);
+			}
+		})
+	</script>
+</html>
